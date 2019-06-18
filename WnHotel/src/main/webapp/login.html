@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jQuery-2.2.2-min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			
+			
+			.loginBox{
+				margin-top:200px;
+				margin-left:65%;
+				width: 334px;
+				height: 387px;
+				border:1px solid #A0B1C4;
+				border-radius: 5px;
+				font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+				font-size: 16px;
+				background-color: white;
+			}
+			.login_nav{
+				width: 100%;
+				height: 50px;
+			}
+			.login_nav div{
+				float: left;
+				text-align: center;
+				width: 50%;
+				height:100%;
+				font-size: 16px;
+				color: #999;
+				line-height:50px;
+				background-color: #F9FBFE;
+				cursor:pointer;
+				border-bottom:1px solid #A0B1C4;
+				
+			}
+			
+			
+			.loginBox .content .QR_code{
+				width:180px;
+				height: 180px;
+				border: 1px solid #D0D0D0;
+				margin: 30px auto;
+				background-image: url(img/QR_code.png);
+				background-size: 100% 100%;
+				
+			}
+			.text{
+				margin: 0 auto;
+				text-align: center;
+				font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+				font-size: 12px;
+			}
+			
+			.content_2{
+				display: none;
+			}
+			
+			.content_2 input.text {
+				width: 232px;
+				margin-top: 14px;
+				height: 40px;
+				text-align: left;
+				border-radius: 3px;
+				font-family: Verdana,Tahoma,Arial;
+				font-size: 16px;
+			}
+			.content_2 .submit{
+				width: 248px;
+				height: 40px;
+				padding: 4px 0;
+				font-weight: normal;
+				font-size: 18px;
+				margin:40px 13%;
+			}
+			 #no_password{
+				display: block;
+				float: right;
+				color: #225592;
+				font: 12px "lucida Grande",Verdana,"Microsoft YaHei";
+				margin: 30px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<img alt="" src="img/timg.jpg" style="float: left; margin-top:-300px;margin-left:15%">
+	
+		<div class="loginBox">
+			<div class="login_nav">
+				<div class="wechar" style="color: black;">扫码登录</div><div class="qq">账号登录</div>
+			</div>
+			<div class="content">
+				<div class="content_1">
+					<div class="QR_code">
+					</div>
+					<div class="text">请使用二维码扫码登录</div>
+				</div>
+				<div class="content_2">
+					<form action="/user" method="get">
+						<input type="text" name="name" class="form-control text top" id="" value="" style="margin-top: 40px;" placeholder="账号"/>
+						<input type="password" name="passWord" class="form-control text" id="" value="" placeholder="密码"/>
+						<input type="submit" class="btn btn-primary submit" value="登录">
+						<a id="no_password" href="#">忘了密码?</a>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(".wechar").click(function(){
+			$(".content_2").css("display","none");
+			$(".content_1").css("display","inline");
+			$(this).css("color","black");
+			$(".qq").css("color","#999");
+		})
+		$(".qq").click(function(){
+			$(".content_1").css("display","none")
+			$(".content_2").css("display","inline");
+			$(this).css("color","black");
+			$(".wechar").css("color","#999");
+		})
+
+	</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Hello</title>
+</head>
+<body>
+	<!-- th:text是一个属性    -->
+	<h1 th:text="${message} ">Hello World</h1>
+	<h1 th:text="${user} ">Hello World</h1>
+	<h1 th:text="${user.name} ">Hello World</h1>
+	<h1 th:text="${list[0].name} ">Hello World</h1>
+	
+	<table >
+		<tr><th>姓名</th><th>年龄</th><th>性别</th></tr>
+		<tr th:each="user,iterStat : ${list}"><td th:text="${user.name}">123</td><td th:text="${user.age}">123</td><td th:text="${user.gender}">123</td></tr>
+	</table>
+	<h5 th:if="true" > 百度</h5>
+	<h5 th:unless="false" > 百度</h5>
+	
+</body>
+</html>
